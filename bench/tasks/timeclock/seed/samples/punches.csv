@@ -1,0 +1,5 @@
+employee,timestamp,kind
+Alice,2024-05-06T09:00,in
+Alice,2024-05-06T17:00,out
+Bob,2024-05-07T09:10,in
+Bob,2024-05-07T16:20,out

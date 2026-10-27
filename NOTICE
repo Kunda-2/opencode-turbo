@@ -1,0 +1,15 @@
+This project contains material from the following MIT-licensed projects:
+
+dsh-turbo — https://github.com/burning-frappuccino/dsh-turbo
+  The turbo/1 execution-policy prompt text (turbo/index.ts, constants BASE and MAX_GEAR) is adapted
+  from src/prompts/turbo-policy.ts in that repository.
+  Copyright (c) the dsh-turbo authors. MIT License.
+
+dsh-tool-turbo — https://github.com/Electricitysheep/dsh-tool-turbo
+  The idea of lowering reasoning effort for cheap tool rounds is taken from that project. This
+  implementation does not copy its code: it applies a fixed effort per gear instead of a per-step
+  heuristic, because the fixed lever already captured most of the measured gain.
+  Copyright (c) the dsh-tool-turbo authors. MIT License.
+
+Both licenses permit reuse with this notice. If you redistribute this project, keep NOTICE and
+LICENSE together with it.

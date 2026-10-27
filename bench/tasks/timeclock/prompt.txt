@@ -1,0 +1,14 @@
+Build the timeclock report described in SPEC.md in this directory.
+
+Deliver all five files:
+
+- `parse.js` — CSV parsing (quoting, `""` escape, CRLF, blank lines skipped).
+- `pairs.js` — pair consecutive `in`/`out` punches per employee, produce shifts and error rows.
+- `rules.js` — daily worked minutes (break deduction + round up to 15), overtime, regular minutes, pay.
+- `store.js` — `load(path)` / `save(path, punches)` on a JSON punch file, idempotent on duplicates.
+- `cli.js` — `node cli.js --json <punches.csv> [--shift-end HH:MM] [--month YYYY-MM] [--rate N]`.
+
+- CommonJS, plain Node, no dependencies, no network.
+- Only the single JSON object goes to stdout; diagnostics (if any) go to stderr.
+- Exit 2 for missing/malformed arguments, an unreadable file, or a bad row — see SPEC.md.
+- samples/punches.csv is here to try things out; do not edit it.

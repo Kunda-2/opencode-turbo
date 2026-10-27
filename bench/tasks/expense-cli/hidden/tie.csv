@@ -1,0 +1,6 @@
+date,employee,category,amount,currency
+2024-04-01,Zoe,meals,110.00,CNY
+2024-04-01,"Smith, John",meals,110.00,CNY
+
+2024-04-02,Amy,meals,10.375,CNY
+2024-04-03,Bob,transport,150.00,GBP

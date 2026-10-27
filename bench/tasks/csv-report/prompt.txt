@@ -1,0 +1,6 @@
+Write report.js in this directory so that `node report.js data.csv` works exactly as described in SPEC.md.
+
+- CommonJS, plain Node, no dependencies, no network.
+- Do not edit data.csv.
+- data.csv and public.test.js are here to try things out; `node public.test.js` is a quick self-check.
+- Only the single JSON object goes to stdout.

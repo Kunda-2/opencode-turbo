@@ -1,0 +1,6 @@
+date,employee,category,amount,currency
+2024-05-06,Alice,meals,45.00,CNY
+2024-05-06,Bob,transport,180.00,CNY
+2024-05-07,Alice,hotel,580.00,CNY
+2024-05-11,Bob,meals,120.00,CNY
+2024-05-08,Carol,hotel,700.00,USD

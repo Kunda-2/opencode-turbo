@@ -1,0 +1,8 @@
+Build the expense CLI described in SPEC.md in this directory.
+
+Deliver `parse.js`, `rules.js` and `cli.js` so that `node cli.js --json <file.csv>` works.
+
+- CommonJS, plain Node, no dependencies, no network.
+- CSV parsing in parse.js, cap/rounding/aggregation rules in rules.js, argument and file handling in cli.js.
+- Only the single JSON object goes to stdout.
+- samples/a.csv is here to try things out; do not edit it.

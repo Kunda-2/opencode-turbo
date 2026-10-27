@@ -1,0 +1,8 @@
+Fix the inventory code in this directory.
+
+`node repro.js` fails. Find the root cause in store.js / inventory.js and fix the implementation so that
+every behaviour documented in SPEC.md holds.
+
+- Keep the file names and module APIs exactly as SPEC.md describes; CommonJS, plain Node, no dependencies.
+- Do not edit SPEC.md and do not weaken repro.js.
+- `node repro.js` must exit 0 when you are done.

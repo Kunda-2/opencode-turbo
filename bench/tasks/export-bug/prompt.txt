@@ -1,0 +1,5 @@
+`node public.test.js` fails. Fix the CSV export in orders.js so the export is correct for the data it receives.
+
+- CommonJS, plain Node, no dependencies.
+- Keep the module exports and `toCsv`'s signature.
+- Do not edit public.test.js or README.md.

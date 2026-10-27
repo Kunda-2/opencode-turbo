@@ -1,0 +1,7 @@
+node_modules/
+turbo-modes.json
+bench/runs/
+bench/logs/
+bench/batch*.log
+bench/*-partial.json
+*.log

@@ -1,0 +1,11 @@
+date,employee,category,amount,currency
+2024-03-04,Alice,meals,100.00,CNY
+2024-03-04,Bob,meals,120.00,CNY
+2024-03-05,Alice,hotel,600.00,CNY
+2024-03-09,Alice,meals,140.00,CNY
+2024-03-04,Carol,meals,50.00,USD
+2024-03-06,Dan,other,25.00,CNY
+2024-03-07,Bob,transport,250.00,CNY
+2024-03-10,Eve,transport,280.00,CNY
+2024-03-08,Eve,meals,130.00,CNY
+2024-03-07,Frank,meals,30.00,EUR

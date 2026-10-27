@@ -1,0 +1,10 @@
+employee,timestamp,kind
+Fay,2024-06-05T09:00,in
+Ed,2024-07-01T18:30,out
+"Dana, Q",2024-06-03T17:13,out
+
+Ed,2024-06-04T10:00,in
+"Dana, Q",2024-06-03T09:00,in
+Ed,2024-07-01T09:00,in
+Ed,2024-06-04T12:00,out
+

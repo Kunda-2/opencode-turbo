@@ -1,0 +1,4 @@
+Add a `--json` mode to the `show` subcommand of the CLI, so scripts can consume a single record.
+
+- CommonJS, plain Node, no dependencies.
+- Do not edit README.md or data.json.

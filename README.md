@@ -14,7 +14,7 @@ Two hooks, nothing else:
 | Half | File | Behaviour |
 |---|---|---|
 | server | `turbo/index.ts` | On every model call (`session.hook("context")`) push one system section and, in `fast` gear, set `options.reasoningEffort = "low"` |
-| TUI | `turbo/tui.ts` | `/turbo off\|fast\|max\|status` writes `turbo-modes.json` and shows a toast — no model turn |
+| TUI | `turbo/tui.ts` | `/turbo off\|fast\|max\|status` (this session) and `/turbo global ...` write `turbo-modes.json` and show a toast — no model turn |
 
 | Gear | policy section | reasoningEffort |
 |---|---|---|
@@ -72,9 +72,13 @@ default `low`), `maxEffort` (default `inherit`), `debug`.
 
 ## Use
 
-- `/turbo status` — toast with the current gear, instant.
-- `/turbo off|fast|max` — global. Per-session override: add `"ses_xxx": "off"` to
-  `turbo-modes.json` (session keys win over `"*"`). No restart needed.
+- `/turbo status` — instant toast: effective gear, global default, and the session id it resolved.
+- `/turbo off|fast|max` — **this session only** (writes `"ses_xxx": "<mode>"`).
+- `/turbo global off|fast|max` — every session that has no override (writes `"*"`).
+- Resolution order: session key → `"*"` → `defaultMode`. Changes apply from the next request, no
+  restart. If the current session cannot be resolved the command refuses to write and says so; use
+  `/turbo global <mode>` instead. `/turboprobe` dumps the resolution diagnostics to
+  `/tmp/opencode/turbo-tui-probe.json`.
 - Uninstall: remove the `plugins[]` entry and delete `turbo-modes.json`.
 
 ## Caveats

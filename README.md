@@ -68,7 +68,8 @@ Restart the TUI once (the TUI half joins the boot graph; config hot-reload is no
 `turbo-modes.json` is created next to the package on first toggle.
 
 Options: `defaultMode` (`off|fast|max`, default `fast`), `fastEffort` (`low|high|max|inherit`,
-default `low`), `maxEffort` (default `inherit`), `debug`.
+default `low`), `maxEffort` (default `inherit`), `events` (default `true`), `eventsFile`
+(default `~/.local/share/opencode/turbo-events.jsonl`).
 
 ## Use
 
@@ -92,6 +93,29 @@ default `low`), `maxEffort` (default `inherit`), `debug`.
   check but is subtly wrong" was not exercised. Tasks were 1–3 minutes, one model, one machine,
   n=2–4 per cell. If a hard task feels under-thought, use `/turbo max`.
 - No Web/desktop UI: the toggle is TUI-only.
+
+## Observability
+
+Every turn appends one JSON line, so you can judge `fast` on your own work instead of trusting a
+benchmark:
+
+```json
+{"ts":"2026-10-27T06:16:55.092Z","sessionID":"ses_...","outcome":"succeeded","mode":"fast",
+ "effort":"low","wallMs":6564,"steps":3,"toolCalls":3,"toolFailures":1,"verified":false,
+ "cost":0,"tokens":{"input":17885,"output":148,"reasoning":266,"cacheRead":38272}}
+```
+
+`verified` is true when a shell command in that turn looked like a build/test/lint (same idea as
+dsh-turbo's evidence metric: an observation, not a claim). `toolFailures` counts non-zero exits.
+
+```bash
+jq -r 'select(.toolFailures>0) | [.ts,.mode,.steps,.toolFailures] | @tsv' \
+  ~/.local/share/opencode/turbo-events.jsonl | tail
+```
+
+This exists because the "does `fast` hurt quality?" question was not answerable from a one-off
+benchmark: 12 hidden-acceptance runs on a task with deliberately unconventional values in a doc showed
+`fast` matching `off` exactly (and faster), so the risk stays open until real sessions say otherwise.
 
 ## Benchmark
 
